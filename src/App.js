@@ -4,12 +4,14 @@ import ColorBox from './components/ColorBox.js';
 // import ColorContext from './contexts/color.js';
 
 import { ColorProvider } from './contexts/color.js'
+import SelectColors from './components/SelectColors.js';
 
 function App() {
   return (
     //레거시 : <ColorContext.Provider value={{color:'green'}}>
     <ColorProvider>
       <div>
+        <SelectColors />
         <ColorBox></ColorBox>
       </div>
     </ColorProvider>
