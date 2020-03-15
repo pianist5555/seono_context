@@ -1,19 +1,29 @@
 import React from "react";
-import ColorContext from "../contexts/color.js";
+import { ColorConsumer } from "../contexts/color.js";
 
 const ColorBox = () => {
   return (
-    <ColorContext.Consumer>
+    // 문자열이 아닌 중괄호를 열어 함수를 넣고 파라미터 객체의 color를 가져와서 적용시켜줌
+    <ColorConsumer>
       {value => (
-        <div
-          style={{
-            width: "64px",
-            height: "64px",
-            background: value.color
-          }}
-        />
+        <>
+          <div
+            style={{
+              width: "64px",
+              height: "64px",
+              background: value.state.color
+            }}
+          />
+          <div
+            style={{
+              width: "32px",
+              height: "32px",
+              background: value.state.subcolor
+            }}
+          />
+        </>
       )}
-    </ColorContext.Consumer>
+    </ColorConsumer>
   );
 };
 
