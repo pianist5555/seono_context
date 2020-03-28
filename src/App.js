@@ -1,5 +1,6 @@
 import React from 'react';
-import Counter from './components/Counter.js'
+//import Counter from './components/Counter.js'
+import CounterContainer from './containers/CounterContainer';
 import Todos from './components/Todos.js'
 /*
 import ColorBox from './components/ColorBox.js';
@@ -12,7 +13,7 @@ import SelectColors from './components/SelectColors.js';
 function App() {
   return (
     <div>
-      <Counter number={0} />
+      <CounterContainer />
       <hr />
       <Todos />
     </div>
