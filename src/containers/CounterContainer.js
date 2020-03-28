@@ -26,3 +26,18 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps,
 )(CounterContainer);
+
+/*
+map... 함수들을 선언하지 않고 내보내기에서 간편하게 설정하는 코드
+connect함수가 dispatch작업을 해주는 bindActionCreators함수 작업을 대신하게 해줌
+
+export default connect(
+    state => ({
+        number: state.counter.number,
+    }),
+    {
+        increase,
+        decrease,
+    },
+)(CounterContainer)
+*/
