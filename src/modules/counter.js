@@ -1,6 +1,6 @@
 // 액션 타입을 정의한다.
-const INCREASE = 'counter/INCREASE';
-const DECREASE = 'counter/DECREASE'; /* 모듈 이름/액션 이름 */
+const INCREASE = '/counter/INCREASE';
+const DECREASE = '/counter/DECREASE'; /* 모듈 이름/액션 이름 */
 
 // 액션 생성 함수를 만든다.
 export const increase = () => ({ type:INCREASE });
@@ -15,6 +15,7 @@ const initialState = {
 function counter (state = initialState, action){
     switch (action.type) {
         case INCREASE:
+            console.log("8.리듀서 counter함수")
             return {
                 number: state.number + 1
             };

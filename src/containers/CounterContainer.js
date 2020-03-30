@@ -3,23 +3,28 @@ import { connect } from 'react-redux'; //리덕스와 직접 연동하는 컨테
 import Counter from '../components/Counter.js'
 import { increase, decrease } from '../modules/counter.js';
 
+//modules/counter.js에 있는 액션 생성 함수 increase와 decrease를 각각 파라미터로 넣어 Counter의 props로 사용하고 있음
 const CounterContainer = ({ number, increase, decrease }) => {
+    console.log("5&9.CounterContainer 리턴")
     return (
         <Counter number={number} onIncrease={increase} onDecrease={decrease} />
     );
 };
 
-// 현재 스토어가 지니고있는 state값을 파라미터로 받아옴
+// 중요 *mapStateToProps등은 반환하는 객체 내부의 값들을 컴포넌트의 props로 전달됨
+// 현재 스토어(modules/counter.js)가 지니고있는 state(number)값을 파라미터로 받아옴
 const mapStateToProps = state => ({
     number : state.counter.number
 });
 // 스토어의 내장 함수 dispatch를 파라미터로 받아옴
 const mapDispatchToProps = dispatch => ({
+    // 액션 생성함수를 해당 컴포넌트(CounterContainer)에 props로 전달하고 있음
     increase: () => {
-        dispatch(increase());
+        console.log("7.카운터컨테이너 인크리즈 디스패치")
+        dispatch(increase()); // "{type:counter/INCREASE}"
     },
     decrease: () => {
-        dispatch(decrease());
+        dispatch(decrease()); // "{type:counter/DECREASE}"
     },
 });
 export default connect(

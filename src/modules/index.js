@@ -7,6 +7,6 @@ const rootReducer = combineReducers({
     counter,
     todos,
 })
-
+console.log("1.rootReducer 생성")
 // index.js로 설정해주면 디렉토리 이름만 사용해여 import 할 수 있다. ex) import rootReducer from './modules.js';
 export default rootReducer;

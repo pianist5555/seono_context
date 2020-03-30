@@ -14,6 +14,7 @@ function App() {
   return (
     <div>
       <CounterContainer />
+      {console.log("4.App.js")}
       <hr />
       <Todos />
     </div>
