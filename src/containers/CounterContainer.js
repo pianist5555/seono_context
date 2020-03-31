@@ -27,6 +27,7 @@ const mapDispatchToProps = dispatch => ({
         dispatch(decrease()); // "{type:counter/DECREASE}"
     },
 });
+// 리덕스 state에 연결 (state -> counter가 연결됨, 개발자도구 redux -> chart 확인)
 export default connect(
     mapStateToProps,
     mapDispatchToProps,

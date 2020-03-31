@@ -5,7 +5,7 @@ const REMOVE = 'todos/REMOVE'; // todo를 제거함
 
 export const changeInput = input => ({
     type: CHANGE_INPUT,
-    input
+    input,
 });
 
 let id= 3;
@@ -49,12 +49,12 @@ function todos(state = initialState, action){
     switch (action.type) {
         case CHANGE_INPUT:
             return {
-                ...state, // 객체 spread 연산자 사용하여 기존 객체의 값을 수정해서 새로운 객체로 인식하게 함(ES9)
+                state, // 객체 spread 연산자 사용하여 기존 객체의 값을 수정해서 새로운 객체로 인식하게 함(ES9)
                 input : action.input
             };
         case INSERT:
             return {
-                ...state,
+                ...state, // https://sheldhe93.tistory.com/13 스프레드 연산자 설명 => 배열 상태를 분해함
                 todos : state.todos.concat(action.todo)
             };
         case TOGGLE:

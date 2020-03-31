@@ -18,6 +18,7 @@ const TodoItem = ({ todo, onToggle, onRemove }) => {
 };
 
 const Todos = ({
+    test,
     input, // 인풋에 입력되는 텍스트
     todos, // 할 일 목록이 들어 있는 객체
     onChangeInput,
@@ -26,7 +27,7 @@ const Todos = ({
     onRemove
 }) => {
     const onSubmit = e => {
-        e.prevenDefault();
+        e.preventDefault();
         onInsert(input);
         onChangeInput(''); // 등록 후 인풋 초기화
     };
@@ -36,6 +37,7 @@ const Todos = ({
             <form onSubmit={onSubmit}>
                 <input value={input} onChange={onChange}/>
                 <button type="submit">등록</button>
+                <h1>{test}dd</h1>
             </form>
             <div>
                 {todos.map(todo => (
